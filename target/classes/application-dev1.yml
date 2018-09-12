@@ -5,14 +5,23 @@ spring:
     store-type: none
 
   datasource:
-    url: jdbc:mysql://192.168.3.55:3306/credit?characterEncoding=UTF-8
-    username: admin
-    password: admin
+    url: jdbc:mysql://120.76.43.180:3306/pqts_text?characterEncoding=UTF-8
+    username: root
+    password: wjx@Db1q!
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
+
+      #aMQ
+    activemq:
+      host: 192.168.1.135
+      port: 61616
+      publisher-confirms: true
+      virtual-host: /
+      username: system
+      password: manager
 
     # 配置获取连接等待超时的时间
     maxWait: 60000
@@ -107,7 +116,7 @@ hystrix:
 #自定义参数
 appConfig:
   appName: cms-Dev
-  appNameCn: 趣借钱后台管理系统-Dev
+  appNameCn: 后台管理系统-Dev
 
   secretOfCoreService: secretOfCoreService_dev    #核心服务调用密钥
   secretOfListService: key00000001_dev    #名单服务调用密钥
